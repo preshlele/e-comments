@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="loading-spinner">
+        @if(isLoading){
+        <mat-spinner></mat-spinner>
+        }
+    </div>
+    <ul class="product-list">
+        @for(product of products; track $index){
+        <li class="product-item" (click)="onClick(product)">
+            <a>
+                <img src="{{ product.image }}" alt="{{ product.title }}" class="product-image">
+                <h2 class="product-title">{{ product.title }}</h2>
+            </a>
+        </li>
+        }
+    </ul>
+</div>
